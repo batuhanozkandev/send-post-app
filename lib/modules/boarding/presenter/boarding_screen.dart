@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:send_post_app/base_screen.dart';
+import 'package:send_post_app/modules/base_screen/presenter/base_screen.dart';
 
 class BoardingScreen extends StatelessWidget {
   const BoardingScreen({Key? key}) : super(key: key);
