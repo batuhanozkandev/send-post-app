@@ -1,0 +1,12 @@
+<svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="22" x2="1.67423" y1="22" y2="21.6633">
+        <stop offset="0" stop-color="#888bf4" />
+        <stop offset="1" stop-color="#5151c6" />
+    </linearGradient>
+    <path clip-rule="evenodd"
+        d="m16.2838 7.69012-6.29313 6.33518-7.36773-4.53478c-.96543-.59433-.76975-2.06055.31784-2.37622l17.39502-5.0616c.9892-.28628 1.9038.64114 1.6076 1.63495l-5.1612 17.37705c-.3233 1.0874-1.773 1.2757-2.359.3048l-4.43253-7.3442"
+        fill="url(#a)" fill-rule="evenodd" />
+    <path
+        d="m16.2838 7.69012-6.29313 6.33518-7.36773-4.53478c-.96543-.59433-.76975-2.06055.31784-2.37622l17.39502-5.0616c.9892-.28628 1.9038.64114 1.6076 1.63495l-5.1612 17.37705c-.3233 1.0874-1.773 1.2757-2.359.3048l-4.43253-7.3442"
+        stroke="#fff" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
