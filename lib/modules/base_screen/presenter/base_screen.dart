@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:send_post_app/modules/base_screen/infra/datasources/base_screen_controller.dart';
 
-class BaseScreen extends StatelessWidget {
+import '../infra/models/bottom_navigation_bar_item.dart';
+
+class BaseScreen extends GetWidget<BaseScreenController> {
   final Widget child;
   final Widget? background;
   final EdgeInsetsGeometry? padding;
@@ -20,11 +23,8 @@ class BaseScreen extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: (hasBottomNavigationBar ?? false)
           ? BottomNavigationBar(
-              items: [
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.ac_unit),
-                ),
-              ],
+              items: navBarItemList,
+              onTap: (index) => controller.changeScreen(index, '/'),
             )
           : null,
       body: SizedBox(
