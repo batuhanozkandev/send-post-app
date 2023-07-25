@@ -1,5 +1,5 @@
 class AppIcons {
-  static const mainPath = "assets/icons/";
+  static const mainPath = "assets/icons";
   static const String addCircle = '$mainPath/ic_add_circle.svg';
   static const String arrowLeft = '$mainPath/ic_arrow_left.svg';
   static const String arrowRight = '$mainPath/ic_arrow_right.svg';
