@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:send_post_app/core/constants/app_images.dart';
 import 'package:send_post_app/core/extensions/space.dart';
-import 'package:send_post_app/modules/base_screen/presenter/base_screen.dart';
 import 'package:send_post_app/modules/splash/infra/datasources/splash_screen_controller.dart';
 import 'package:send_post_app/modules/splash/presenter/widgets/splash_text.dart';
 
+import '../../base/presenter/base_screen.dart';
 import '../infra/models/centered_image_design.dart';
 
 class SplashScreen extends GetWidget<SplashScreenController> {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:send_post_app/modules/base_screen/infra/datasources/base_screen_controller.dart';
 
+import '../infra/datasources/base_screen_controller.dart';
 import '../infra/models/bottom_navigation_bar_item.dart';
 
 class BaseScreen extends GetWidget<BaseScreenController> {
