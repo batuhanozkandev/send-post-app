@@ -1,6 +1,7 @@
 class AppImages {
   static const main = "assets/images";
   static const String background = '$main/background.png';
+  static const String lightBackground = '$main/light_background.png';
   static const String headerBackground = '$main/header_background.png';
   static const String rectangleBoxCover = '$main/rectangle_box_cover.png';
   static const String dummyAvatar = '$main/dummy_avatar.png';

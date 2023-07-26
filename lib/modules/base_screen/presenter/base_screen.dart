@@ -24,7 +24,10 @@ class BaseScreen extends GetWidget<BaseScreenController> {
       bottomNavigationBar: (hasBottomNavigationBar ?? false)
           ? BottomNavigationBar(
               items: navBarItemList,
-              onTap: (index) => controller.changeScreen(index, '/'),
+              onTap: (index) => controller.changeScreen(
+                index,
+                controller.pages[index]!,
+              ),
             )
           : null,
       body: SizedBox(

@@ -3,16 +3,15 @@ import 'package:get/get.dart';
 class BaseController extends GetxController {
   String? builderId;
   String? errorMessage;
-  bool? isLoading;
-  bool? isError;
+  bool isLoading = false;
+  bool isError = false;
 
   void updateState({
     String? builderId,
     String? errorMessage = '',
-    bool? isLoading = false,
-    bool? isError = false,
+    bool isLoading = false,
+    bool isError = false,
   }) {
-    this.builderId = builderId;
     this.errorMessage = errorMessage;
     this.isLoading = isLoading;
     this.isLoading = isError;

@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:send_post_app/core/configs/getX/init_controllers.dart';
 import 'package:send_post_app/core/constants/theme/dark_theme/dark_theme.dart';
 import 'package:send_post_app/core/constants/theme/light_theme/light_theme.dart';
-import 'package:send_post_app/modules/boarding/presenter/boarding_screen.dart';
 
+import 'core/configs/cache/cache.dart';
 import 'core/configs/getX/page_routes.dart';
+import 'modules/splash/presenter/splash_screen.dart';
 
 void main() {
+  Cache.init();
+  ControllerInitialiser.init();
   runApp(const MyApp());
 }
 
@@ -22,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: LightTheme().lightTheme,
       darkTheme: DarkTheme().darkTheme,
       home: const Scaffold(
-        body: BoardingScreen(),
+        body: SplashScreen(),
       ),
     );
   }
