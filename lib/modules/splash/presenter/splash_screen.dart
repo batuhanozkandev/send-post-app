@@ -14,6 +14,7 @@ class SplashScreen extends GetWidget<SplashScreenController> {
   @override
   Widget build(BuildContext context) {
     controller.forwardSplashAnimation();
+
     return BaseScreen(
       background: Image.asset(
         AppImages.lightBackground,
