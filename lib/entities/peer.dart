@@ -1,10 +1,10 @@
-import 'package:send_post_app/models/notification.dart';
-import 'package:send_post_app/models/person.dart';
+import 'package:send_post_app/entities/person.dart';
 
-class User extends Person {
-  final List<Notification> notifications;
+class Peer extends Person {
+  final bool? isLikedByMe;
+  final bool? isFollowedByMe;
 
-  User(
+  Peer(
     super.name,
     super.uID,
     super.userName,
@@ -15,8 +15,9 @@ class User extends Person {
     super.likes,
     super.interestedInTopics,
     super.posts,
-    super.avatarUrl,
+    super.avatarURL,
     super.isBanned,
-    this.notifications,
+    this.isLikedByMe,
+    this.isFollowedByMe,
   );
 }

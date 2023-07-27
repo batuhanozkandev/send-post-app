@@ -15,6 +15,8 @@ extension ThemeExtension on BuildContext {
 
   Color get background => Theme.of(this).colorScheme.background;
 
+  Color get fieldBackgroundColor => BaseTheme.fieldBackgroundColor;
+
   // text styles
   TextStyle? get titleSmall => Theme.of(this).textTheme.titleSmall;
 
@@ -41,4 +43,20 @@ extension ThemeExtension on BuildContext {
   double get radiusMedium => BaseTheme.radiusMedium;
 
   double get radiusLarge => BaseTheme.radiusLarge;
+
+  double get radiusHuge => BaseTheme.radiusHuge;
+
+  double get radiusField => BaseTheme.radiusField;
+
+  double get radiusButton => BaseTheme.radiusButton;
+
+  // paddings
+
+  double get paddingSmall => BaseTheme.paddingSmall;
+
+  double get paddingMedium => BaseTheme.paddingMedium;
+
+  double get paddingLarge => BaseTheme.paddingLarge;
+
+  double get paddingHuge => BaseTheme.paddingHuge;
 }

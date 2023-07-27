@@ -34,6 +34,10 @@ class Cache {
     return _box?.get('token');
   }
 
+  static void setToken(String token) {
+    _box?.put('token', token);
+  }
+
   static void updateLogInState({loggedIn = false}) {
     _box?.put('isLoggedIn', loggedIn);
   }

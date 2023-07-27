@@ -7,18 +7,30 @@ void showCustomSnackBar({
   bool? isError = false,
   Duration? duration,
 }) {
+  final context = Get.context;
   Get.showSnackbar(
     GetSnackBar(
-      backgroundColor: (isError ?? false)
-          ? ThemeData.light().colorScheme.error
-          : ThemeData.light().primaryColorLight,
       title: title,
-      duration: duration ?? 1.seconds,
-      messageText: Text(
-        message!,
-        style: const TextStyle(
-          fontSize: 12,
-          color: Colors.white,
+      duration: duration ?? 3.seconds,
+      backgroundColor: Colors.transparent,
+      padding: EdgeInsets.zero,
+      messageText: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 40),
+        height: (context?.size?.height ?? 0) / 16.0,
+        decoration: BoxDecoration(
+          color: (isError ?? false)
+              ? ThemeData.light().colorScheme.error
+              : ThemeData.light().primaryColorLight,
+        ),
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            message!,
+            style: const TextStyle(
+              fontSize: 16,
+              color: Colors.white,
+            ),
+          ),
         ),
       ),
     ),

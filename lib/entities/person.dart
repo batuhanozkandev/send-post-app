@@ -1,4 +1,4 @@
-import 'package:send_post_app/models/post.dart';
+import 'package:send_post_app/entities/post.dart';
 
 class Person {
   final String? uID;

@@ -1,4 +1,4 @@
-import 'package:send_post_app/models/person.dart';
+import 'package:send_post_app/entities/person.dart';
 
 class Post {
   final int? id;
