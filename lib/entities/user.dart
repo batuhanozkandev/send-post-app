@@ -2,9 +2,9 @@ import 'package:send_post_app/entities/notification.dart';
 import 'package:send_post_app/entities/person.dart';
 
 class User extends Person {
-  final List<Notification> notifications;
+  final List<Notification>? notifications;
 
-  User(
+  User({
     super.name,
     super.uID,
     super.userName,
@@ -18,5 +18,5 @@ class User extends Person {
     super.avatarUrl,
     super.isBanned,
     this.notifications,
-  );
+  });
 }

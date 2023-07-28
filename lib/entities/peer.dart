@@ -4,7 +4,7 @@ class Peer extends Person {
   final bool? isLikedByMe;
   final bool? isFollowedByMe;
 
-  Peer(
+  Peer({
     super.name,
     super.uID,
     super.userName,
@@ -15,9 +15,9 @@ class Peer extends Person {
     super.likes,
     super.interestedInTopics,
     super.posts,
-    super.avatarURL,
+    super.avatarUrl,
     super.isBanned,
     this.isLikedByMe,
     this.isFollowedByMe,
-  );
+  });
 }

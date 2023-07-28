@@ -9,7 +9,6 @@ import 'package:send_post_app/core/extensions/space.dart';
 import 'package:send_post_app/core/extensions/theme.dart';
 import 'package:send_post_app/modules/auth/auth_controller.dart';
 
-import '../../../../entities/user.dart';
 import '../../../../models/custom_common_button.dart';
 import '../../../../models/custom_input_form_field.dart';
 import '../../../../models/highlighted_action_text.dart';
@@ -17,8 +16,6 @@ import '../../../base/presenter/base_screen.dart';
 
 class LogInScreen extends GetWidget<AuthController> {
   LogInScreen({Key? key}) : super(key: key);
-
-  GlobalKey<FormState> formKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +43,7 @@ class LogInScreen extends GetWidget<AuthController> {
                 ),
               ),
               child: Form(
-                key: formKey,
+                key: controller.formKey,
                 child: Column(
                   children: [
                     context.ySmall,
@@ -69,8 +66,7 @@ class LogInScreen extends GetWidget<AuthController> {
                         hint: 'Password',
                         isPassword: controller.obscureIsActive.value,
                         suffix: InkWell(
-                          onTap: () => controller.obscureIsActive.value =
-                              !controller.obscureIsActive.value,
+                          onTap: () => controller.toggleVisibilityOfInput(),
                           child: SvgPicture.asset(
                             AppIcons.show,
                             color: controller.obscureIsActive.value
@@ -95,27 +91,9 @@ class LogInScreen extends GetWidget<AuthController> {
                     ),
                     context.ySmall,
                     CustomCommonButton(
-                        text: 'LOG IN',
-                        onTap: () {
-                          if (formKey.currentState?.validate() ?? false) {
-                            User user = User(
-                              '',
-                              '',
-                              '',
-                              controller.emailController.text,
-                              controller.passwordController.text,
-                              0,
-                              0,
-                              0,
-                              [],
-                              [],
-                              '',
-                              false,
-                              [],
-                            );
-                            controller.logIn(user);
-                          }
-                        }),
+                      text: 'LOG IN',
+                      onTap: () => controller.logIn(),
+                    ),
                   ],
                 ),
               ),

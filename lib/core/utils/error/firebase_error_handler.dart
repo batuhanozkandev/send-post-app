@@ -17,7 +17,8 @@ class FirebaseErrorHandler {
             message: 'This email is already in use!', isError: true);
         break;
       default:
-        showCustomSnackBar(message: 'Error!', isError: true);
+        showCustomSnackBar(
+            message: 'Email or password is not true!', isError: true);
     }
   }
 }

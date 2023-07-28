@@ -12,24 +12,36 @@ import '../../core/constants/app_routes.dart';
 class AuthController extends BaseController {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  GlobalKey<FormState> formKey = GlobalKey();
+
+  late final UserCredential _userCredential;
+  RxBool obscureIsActive = true.obs;
 
   final _ins = FirebaseAuth.instance;
-  late UserCredential userCredential;
-  RxBool obscureIsActive = true.obs;
 
   FirebaseAuth? get ins => _ins;
 
-  Future<void> logIn(model.User user) async {
+  UserCredential? get userCredential => _userCredential;
+
+  Future<void> logIn() async {
     updateState(isLoading: true);
     try {
-      userCredential = await _ins.signInWithEmailAndPassword(
-          email: user.email ?? '', password: user.password ?? '');
+      // if the fields are not validated
+      if (!(formKey.currentState?.validate() ?? true)) {
+        showCustomSnackBar(
+            message: 'Please check your information', isError: true);
+        return;
+      }
 
-      //if log in request is not successful
-      if (userCredential.user == null) return;
+      // try to log in user
+      _userCredential = await _ins.signInWithEmailAndPassword(
+          email: emailController.text, password: passwordController.text);
+      if (_userCredential.user == null) return;
+
+      // get user data whose is already logged in
 
       Cache.updateLogInState(loggedIn: true);
-      final token = await userCredential.user!.getIdToken();
+      final token = await userCredential?.user!.getIdToken();
       print('----------- Generated token ----------');
       print(token);
       Cache.setToken(token ?? '');
@@ -46,10 +58,10 @@ class AuthController extends BaseController {
     updateState(isLoading: true);
     try {
       String? token = Cache.getToken();
-      userCredential = await _ins.signInWithCustomToken(token ?? '');
+      _userCredential = await _ins.signInWithCustomToken(token ?? '');
 
       //if log in request is not successful
-      if (userCredential.user == null) return;
+      if (_userCredential.user == null) return;
 
       Cache.updateLogInState(loggedIn: true);
       print('----------- Already in use token ----------');
@@ -67,14 +79,14 @@ class AuthController extends BaseController {
   Future<void> signUp(model.User user, FormData formData) async {
     updateState(isLoading: true);
     try {
-      userCredential = await _ins.createUserWithEmailAndPassword(
+      _userCredential = await _ins.createUserWithEmailAndPassword(
           email: user.email ?? '', password: user.password ?? '');
 
       //if sign up request is not successful
-      if (userCredential.user == null) return;
+      if (_userCredential.user == null) return;
 
       Cache.updateLogInState(loggedIn: true);
-      final token = await userCredential.user!.getIdToken();
+      final token = await userCredential?.user!.getIdToken();
       print('----------- Generated token ----------');
       print(token);
       Cache.setToken(token ?? '');
@@ -84,6 +96,12 @@ class AuthController extends BaseController {
     } catch (e) {
       showCustomSnackBar(message: 'Somethings went wrong');
     }
+    updateState(isLoading: false);
+  }
+
+  void toggleVisibilityOfInput() {
+    updateState(isLoading: false);
+    obscureIsActive.value = !obscureIsActive.value;
     updateState(isLoading: false);
   }
 

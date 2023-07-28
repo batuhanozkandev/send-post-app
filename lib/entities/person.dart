@@ -14,18 +14,18 @@ class Person {
   final List<Post>? posts;
   final bool? isBanned;
 
-  Person(
-    this.name,
-    this.uID,
-    this.userName,
-    this.email,
-    this.password,
-    this.followerCount,
-    this.followingCount,
-    this.likes,
-    this.interestedInTopics,
-    this.posts,
-    this.avatarUrl,
-    this.isBanned,
-  );
+  Person({
+    this.name = '',
+    this.uID = '',
+    this.userName = '',
+    this.email = '',
+    this.password = '',
+    this.followerCount = 0,
+    this.followingCount = 0,
+    this.likes = 0,
+    this.interestedInTopics = const [],
+    this.posts = const [],
+    this.avatarUrl = '',
+    this.isBanned = false,
+  });
 }
