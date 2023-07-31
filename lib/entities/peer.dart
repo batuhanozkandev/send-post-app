@@ -9,7 +9,6 @@ class Peer extends Person {
     super.uID,
     super.userName,
     super.email,
-    super.password,
     super.followerCount,
     super.followingCount,
     super.likes,

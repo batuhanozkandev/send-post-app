@@ -12,7 +12,7 @@ class BaseScreen extends GetWidget<BaseScreenController> {
   final bool? resizeToAvoidBottomInset;
   final bool? hasFocusHandler;
 
-  const BaseScreen({
+   const BaseScreen({
     Key? key,
     required this.child,
     this.padding,
@@ -56,7 +56,6 @@ class BaseScreen extends GetWidget<BaseScreenController> {
                 padding: padding ?? EdgeInsets.zero,
                 child: child,
               ),
-              // loading widget
             ],
           ),
         ),

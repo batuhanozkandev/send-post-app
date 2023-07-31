@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -15,13 +16,24 @@ class AuthController extends BaseController {
   GlobalKey<FormState> formKey = GlobalKey();
 
   late final UserCredential _userCredential;
+  model.User user = model.User();
   RxBool obscureIsActive = true.obs;
 
-  final _ins = FirebaseAuth.instance;
+  final _authIns = FirebaseAuth.instance;
+  final _firestoreIns = FirebaseFirestore.instance;
 
-  FirebaseAuth? get ins => _ins;
+  FirebaseAuth? get authIns => _authIns;
+
+  FirebaseFirestore? get firestoreIns => _firestoreIns;
 
   UserCredential? get userCredential => _userCredential;
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   Future<void> logIn() async {
     updateState(isLoading: true);
@@ -34,7 +46,7 @@ class AuthController extends BaseController {
       }
 
       // try to log in user
-      _userCredential = await _ins.signInWithEmailAndPassword(
+      _userCredential = await _authIns.signInWithEmailAndPassword(
           email: emailController.text, password: passwordController.text);
       if (_userCredential.user == null) return;
 
@@ -42,23 +54,24 @@ class AuthController extends BaseController {
 
       Cache.updateLogInState(loggedIn: true);
       final token = await userCredential?.user!.getIdToken();
+      final uid = userCredential?.user!.uid;
       print('----------- Generated token ----------');
       print(token);
       Cache.setToken(token ?? '');
+      Cache.setUID(uid ?? '');
+      updateState(isLoading: false);
       Get.toNamed(AppRoutes.home);
     } on FirebaseAuthException catch (e) {
       FirebaseErrorHandler.handleAuthError(e.code);
     } catch (e) {
       showCustomSnackBar(message: 'Somethings went wrong');
     }
-    updateState(isLoading: false);
   }
 
-  Future<void> logInWithToken() async {
+  Future<void> logInWithToken(String token) async {
     updateState(isLoading: true);
     try {
-      String? token = Cache.getToken();
-      _userCredential = await _ins.signInWithCustomToken(token ?? '');
+      _userCredential = await _authIns.signInWithCustomToken(token);
 
       //if log in request is not successful
       if (_userCredential.user == null) return;
@@ -66,7 +79,6 @@ class AuthController extends BaseController {
       Cache.updateLogInState(loggedIn: true);
       print('----------- Already in use token ----------');
       print(token);
-      Cache.setToken(token ?? '');
       Get.toNamed(AppRoutes.home);
     } on FirebaseAuthException catch (e) {
       FirebaseErrorHandler.handleAuthError(e.code);
@@ -76,20 +88,43 @@ class AuthController extends BaseController {
     updateState(isLoading: false);
   }
 
-  Future<void> signUp(model.User user, FormData formData) async {
+  Future<void> signUp() async {
     updateState(isLoading: true);
     try {
-      _userCredential = await _ins.createUserWithEmailAndPassword(
-          email: user.email ?? '', password: user.password ?? '');
+      _userCredential = await _authIns.createUserWithEmailAndPassword(
+          email: emailController.text, password: passwordController.text);
 
       //if sign up request is not successful
       if (_userCredential.user == null) return;
 
-      Cache.updateLogInState(loggedIn: true);
       final token = await userCredential?.user!.getIdToken();
+      Cache.setToken(token ?? '');
+
+      final Map<String, dynamic> data = {
+        'token': token,
+        'name': null,
+        'uID': _userCredential.user?.uid,
+        'userName': null,
+        'email': _userCredential.user?.email,
+        'followerCount': 0,
+        'followingCount': 0,
+        'likes': 0,
+        'interestedInTopics': [],
+        'posts': [],
+        'avatarUrl': null,
+        'isBanned': false,
+        'notifications': [],
+      };
+      _firestoreIns
+          .collection('users')
+          .doc(_userCredential.user?.uid)
+          .set(data);
+
+      Cache.updateLogInState(loggedIn: true);
       print('----------- Generated token ----------');
       print(token);
-      Cache.setToken(token ?? '');
+      final uid = userCredential?.user!.uid;
+      Cache.setUID(uid ?? '');
       Get.toNamed(AppRoutes.home);
     } on FirebaseAuthException catch (e) {
       FirebaseErrorHandler.handleAuthError(e.code);

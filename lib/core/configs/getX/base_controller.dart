@@ -14,7 +14,7 @@ class BaseController extends GetxController {
   }) {
     this.errorMessage = errorMessage;
     this.isLoading = isLoading;
-    this.isLoading = isError;
+    this.isError = isError;
     update([builderId ?? this.builderId!]);
   }
 }

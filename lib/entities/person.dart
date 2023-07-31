@@ -1,11 +1,11 @@
 import 'package:send_post_app/entities/post.dart';
 
 class Person {
+  final String? token;
   final String? uID;
   final String? name;
   final String? userName;
   final String? email;
-  final String? password;
   final String? avatarUrl;
   final int? followerCount;
   final int? followingCount;
@@ -15,11 +15,11 @@ class Person {
   final bool? isBanned;
 
   Person({
+    this.token = '',
     this.name = '',
     this.uID = '',
     this.userName = '',
     this.email = '',
-    this.password = '',
     this.followerCount = 0,
     this.followingCount = 0,
     this.likes = 0,

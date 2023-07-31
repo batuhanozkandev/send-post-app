@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
-import 'package:send_post_app/core/constants/app_icons.dart';
-import 'package:send_post_app/core/constants/app_routes.dart';
 import 'package:send_post_app/core/extensions/sizer.dart';
 import 'package:send_post_app/core/extensions/space.dart';
 import 'package:send_post_app/core/extensions/theme.dart';
 import 'package:send_post_app/modules/auth/auth_controller.dart';
+import 'package:send_post_app/modules/base/presenter/base_screen.dart';
 
+import '../../../../core/constants/app_icons.dart';
 import '../../../../core/constants/app_images.dart';
 import '../../../../models/custom_common_button.dart';
 import '../../../../models/custom_input_form_field.dart';
-import '../../../../models/highlighted_action_text.dart';
-import '../../../base/presenter/base_screen.dart';
 
-class LogInScreen extends GetWidget<AuthController> {
-  LogInScreen({Key? key}) : super(key: key);
+class SignUpScreen extends GetWidget<AuthController> {
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -82,24 +80,11 @@ class LogInScreen extends GetWidget<AuthController> {
                       ),
                     ),
                     context.ySmall,
-                    HighlightedActionText(
-                      text: 'FORGOT PASSWORD',
-                      onTap: () => Get.toNamed(
-                        AppRoutes.home,
-                      ),
-                    ),
-                    context.ySmall,
                     CustomCommonButton(
-                      text: 'LOG IN',
-                      onTap: () => controller.logIn(),
+                      text: 'SIGN UP',
+                      onTap: () => controller.signUp(),
                     ),
                     context.ySmall,
-                    HighlightedActionText(
-                      text: 'SIGN UP',
-                      onTap: () => Get.toNamed(
-                        AppRoutes.signUp,
-                      ),
-                    ),
                   ],
                 ),
               ),
