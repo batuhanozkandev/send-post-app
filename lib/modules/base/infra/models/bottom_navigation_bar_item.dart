@@ -5,18 +5,23 @@ import '../../../../core/constants/app_icons.dart';
 
 List<BottomNavigationBarItem> navBarItemList = [
   BottomNavigationBarItem(
+    label: '',
     icon: SvgPicture.asset(AppIcons.home),
   ),
   BottomNavigationBarItem(
+    label: '',
     icon: SvgPicture.asset(AppIcons.category),
   ),
   BottomNavigationBarItem(
+    label: '',
     icon: SvgPicture.asset(AppIcons.addCircle),
   ),
   BottomNavigationBarItem(
+    label: '',
     icon: SvgPicture.asset(AppIcons.notification),
   ),
   BottomNavigationBarItem(
+    label: '',
     icon: SvgPicture.asset(AppIcons.profile),
   ),
 ];

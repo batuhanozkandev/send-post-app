@@ -24,14 +24,17 @@ class SplashScreenController extends BaseController {
       print('TOKEN=> $_token');
       if (_token == null || _token == '') {
         Get.offAndToNamed(AppRoutes.logIn);
+        updateState();
+        return;
       } else {
         //await authController.logInWithToken(userToken);
         final uID = Cache.getUID();
         _userController.fetchData(uID).then(
               (value) => Get.toNamed(AppRoutes.home),
             );
+        updateState();
+        return;
       }
-      updateState();
     });
   }
 

@@ -22,6 +22,15 @@ class BaseTheme {
   static const TextStyle bodyMedium = TextStyle(fontSize: 16.0);
   static const TextStyle bodyLarge = TextStyle(fontSize: 20.0);
 
+  static const TextStyle selectedTabText = TextStyle(
+    color: primaryDark,
+    fontWeight: FontWeight.bold,
+  );
+  static const TextStyle unSelectedTabText = TextStyle(
+    color: Colors.grey,
+    fontWeight: FontWeight.bold,
+  );
+
   // base radius
   static const double radiusSmall = 4.0;
   static const double radiusMedium = 8.0;
@@ -31,6 +40,7 @@ class BaseTheme {
   // special radius
   static const double radiusField = 40.0;
   static const double radiusButton = 40.0;
+  static const double radiusSearchBox = 40.0;
 
   // base paddings
   static const double paddingSmall = 4.0;

@@ -36,6 +36,10 @@ extension ThemeExtension on BuildContext {
 
   TextStyle? get bodyLarge => Theme.of(this).textTheme.bodyLarge;
 
+  TextStyle? get selectedTabText => BaseTheme.selectedTabText;
+
+  TextStyle? get unSelectedTabText => BaseTheme.unSelectedTabText;
+
   // radius
 
   double get radiusSmall => BaseTheme.radiusSmall;
@@ -49,6 +53,8 @@ extension ThemeExtension on BuildContext {
   double get radiusField => BaseTheme.radiusField;
 
   double get radiusButton => BaseTheme.radiusButton;
+
+  double get radiusSearchBox => BaseTheme.radiusSearchBox;
 
   // paddings
 

@@ -5,7 +5,7 @@ import 'package:send_post_app/core/constants/app_routes.dart';
 class BaseScreenController extends BaseController {
   int activePageIndex = 0;
   Map<int, String> pages = {
-    0: AppRoutes.boarding,
+    0: AppRoutes.home,
     1: AppRoutes.boarding,
     2: AppRoutes.boarding,
     3: AppRoutes.boarding,
