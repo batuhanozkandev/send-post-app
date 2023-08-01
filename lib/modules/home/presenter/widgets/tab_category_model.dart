@@ -19,35 +19,29 @@ class TabCategory extends GetWidget<UserController> {
 
   @override
   Widget build(BuildContext context) {
-    print('---------------------');
-    print('tabController.index');
-    print(controller.selectedTabIndex);
-    print('index');
-    print(index);
-    print('---------------------');
-    return GetBuilder<UserController>(
-        id: 'userController',
-        builder: (c) {
-          return Container(
-            height: context.heightOfScreen(5),
-            decoration: BoxDecoration(
-              color: controller.selectedTabIndex == index
-                  ? context.primaryColorLight.withOpacity(0.4)
-                  : Colors.transparent,
-              borderRadius: BorderRadius.all(
-                Radius.circular(
-                  context.radiusLarge,
-                ),
-              ),
+    return Tab(
+        child: Obx(
+      () => Container(
+        height: context.heightOfScreen(5),
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: controller.selectedTabIndex == index
+              ? context.primaryColorLight.withOpacity(0.1)
+              : Colors.transparent,
+          borderRadius: BorderRadius.all(
+            Radius.circular(
+              context.radiusLarge,
             ),
-            child: Center(
-                child: Text(
-              text,
-              style: controller.selectedTabIndex == index
-                  ? context.selectedTabText
-                  : context.unSelectedTabText,
-            )),
-          );
-        });
+          ),
+        ),
+        child: Center(
+            child: Text(
+          text,
+          style: controller.selectedTabIndex == index
+              ? context.selectedTabText
+              : context.unSelectedTabText,
+        )),
+      ),
+    ));
   }
 }

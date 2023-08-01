@@ -45,6 +45,12 @@ class UserController extends BaseController
     updateState(isLoading: false);
   }
 
+  void updateIndex() {
+    tabController.addListener(() {
+      selectedTabIndex.value = tabController.index;
+    });
+  }
+
   @override
   void onInit() {
     builderId = 'userController';

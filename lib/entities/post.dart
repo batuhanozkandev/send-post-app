@@ -2,6 +2,7 @@ import 'package:send_post_app/entities/person.dart';
 
 class Post {
   final int? id;
+  final int? ownerId;
   final String? type;
   final String? title;
   final String? body;
@@ -13,12 +14,16 @@ class Post {
   final bool? isLikedByMe;
   final bool? isCommentedByMe;
   final bool? isSeenByMe;
-  final List<Person> commentedByPeers;
-  final List<Person> likedByPeers;
+  final List<Person>? commentedByPeers;
+  final List<Person>? likedByPeers;
   final DateTime? shareTime;
+  final bool? isPopular;
+  final bool? isTrending;
+  final bool? isFollowed;
 
-  Post(
+  Post({
     this.title,
+    this.ownerId,
     this.type,
     this.body,
     this.images,
@@ -33,5 +38,8 @@ class Post {
     this.shareTime,
     this.isSeenByMe,
     this.owner,
-  );
+    this.isPopular,
+    this.isTrending,
+    this.isFollowed,
+  });
 }

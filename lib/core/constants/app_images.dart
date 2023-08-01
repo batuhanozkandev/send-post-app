@@ -16,7 +16,7 @@ class AppImages {
   static const String dummyPhotographer2 =
       '$main/dummy_photographer_photo_2.png';
   static const String dummyPostImage = '$main/dummy_post_image.png';
-  static const String dummyPostImage2 = '$main/dummy_post_image2.png';
+  static const String dummyPostImage2 = '$main/dummy_post_image_2.png';
   static const String dummyUiDesign = '$main/dummy_ui_design_photo.png';
   static const String dummyVideoCreator = '$main/dummy_video_creator_photo.png';
 }

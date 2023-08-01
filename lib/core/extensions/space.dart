@@ -2,6 +2,10 @@ import 'package:flutter/cupertino.dart';
 
 extension SpaceExtendion on BuildContext {
   // Space | Width
+  SizedBox get xxSmall => SizedBox(
+        width: MediaQuery.of(this).size.width * 0.02,
+      );
+
   SizedBox get xSmall => SizedBox(
         width: MediaQuery.of(this).size.width * 0.04,
       );
@@ -15,23 +19,23 @@ extension SpaceExtendion on BuildContext {
       );
 
   SizedBox get xHuge => SizedBox(
-        width: MediaQuery.of(this).size.width * 0.16,
-      );
+    width: MediaQuery.of(this).size.width * 0.16,
+  );
 
   // Space | Height
   SizedBox get ySmall => SizedBox(
-        height: MediaQuery.of(this).size.height * 0.04,
-      );
+    height: MediaQuery.of(this).size.height * 0.04,
+  );
 
   SizedBox get yMedium => SizedBox(
-        height: MediaQuery.of(this).size.height * 0.08,
-      );
+    height: MediaQuery.of(this).size.height * 0.08,
+  );
 
   SizedBox get yLarge => SizedBox(
-        height: MediaQuery.of(this).size.height * 0.12,
-      );
+    height: MediaQuery.of(this).size.height * 0.12,
+  );
 
   SizedBox get yHuge => SizedBox(
-        height: MediaQuery.of(this).size.height * 0.16,
-      );
+    height: MediaQuery.of(this).size.height * 0.16,
+  );
 }

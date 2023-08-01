@@ -5,6 +5,7 @@ class LightTheme extends BaseTheme {
   final lightTheme = ThemeData(
     fontFamily: 'Montserrat',
     primaryColorLight: BaseTheme.primaryLight,
+    primaryColorDark: BaseTheme.primaryDark,
     colorScheme: const ColorScheme(
         brightness: Brightness.light,
         primary: BaseTheme.primaryLight,
