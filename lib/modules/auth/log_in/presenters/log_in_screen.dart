@@ -13,14 +13,14 @@ import '../../../../core/constants/app_images.dart';
 import '../../../../models/custom_common_button.dart';
 import '../../../../models/custom_input_form_field.dart';
 import '../../../../models/highlighted_action_text.dart';
-import '../../../base/presenter/base_screen.dart';
+import '../../../base_page/presenter/base_page.dart';
 
 class LogInScreen extends GetWidget<AuthController> {
   LogInScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BaseScreen(
+    return BasePage(
         hasFocusHandler: true,
         background: Image.asset(
           AppImages.lightBackground,

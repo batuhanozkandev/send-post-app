@@ -5,7 +5,7 @@ import 'package:send_post_app/core/extensions/space.dart';
 import 'package:send_post_app/modules/splash/infra/datasources/splash_screen_controller.dart';
 import 'package:send_post_app/modules/splash/presenter/widgets/splash_text.dart';
 
-import '../../base/presenter/base_screen.dart';
+import '../../base_page/presenter/base_page.dart';
 import '../infra/models/centered_image_design.dart';
 
 class SplashScreen extends GetWidget<SplashScreenController> {
@@ -15,7 +15,7 @@ class SplashScreen extends GetWidget<SplashScreenController> {
   Widget build(BuildContext context) {
     controller.forwardSplashAnimation();
     controller.redirect();
-    return BaseScreen(
+    return BasePage(
       background: Image.asset(
         AppImages.lightBackground,
         fit: BoxFit.cover,

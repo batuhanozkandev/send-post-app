@@ -6,19 +6,19 @@ import 'package:send_post_app/core/extensions/sizer.dart';
 import 'package:send_post_app/core/extensions/space.dart';
 import 'package:send_post_app/core/extensions/theme.dart';
 import 'package:send_post_app/modules/auth/auth_controller.dart';
-import 'package:send_post_app/modules/base/presenter/base_screen.dart';
 
 import '../../../../core/constants/app_icons.dart';
 import '../../../../core/constants/app_images.dart';
 import '../../../../models/custom_common_button.dart';
 import '../../../../models/custom_input_form_field.dart';
+import '../../../base_page/presenter/base_page.dart';
 
 class SignUpScreen extends GetWidget<AuthController> {
   const SignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BaseScreen(
+    return BasePage(
         hasFocusHandler: true,
         background: Image.asset(
           AppImages.lightBackground,

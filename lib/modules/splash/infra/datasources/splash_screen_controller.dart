@@ -30,7 +30,9 @@ class SplashScreenController extends BaseController {
         //await authController.logInWithToken(userToken);
         final uID = Cache.getUID();
         _userController.fetchData(uID).then(
-              (value) => Get.offAndToNamed(AppRoutes.home),
+              (value) =>
+                  //Get.offAndToNamed(AppRoutes.home),
+                  Get.offAndToNamed(AppRoutes.base),
             );
         updateState();
         return;

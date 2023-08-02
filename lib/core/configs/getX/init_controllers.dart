@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:send_post_app/core/configs/getX/base_controller.dart';
 import 'package:send_post_app/modules/auth/auth_controller.dart';
+import 'package:send_post_app/modules/category/infra/datasources/category_controller.dart';
 import 'package:send_post_app/modules/home/infra/datasources/user_controller.dart';
 import 'package:send_post_app/modules/splash/infra/datasources/splash_screen_controller.dart';
 
@@ -15,5 +16,6 @@ class ControllerInitialiser {
     Get.lazyPut(() => SplashScreenController(), fenix: true);
     Get.lazyPut(() => AuthController(), fenix: true);
     Get.lazyPut(() => UserController(), fenix: true);
+    Get.lazyPut(() => CategoryController(), fenix: true);
   }
 }

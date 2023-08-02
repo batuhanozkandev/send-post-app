@@ -6,8 +6,14 @@ import 'package:send_post_app/modules/home/presenter/home_screen.dart';
 import 'package:send_post_app/modules/profile/profile_screen.dart';
 
 import '../../../modules/auth/log_in/presenters/log_in_screen.dart';
+import '../../../modules/base/presenter/base_screen.dart';
+import '../../../modules/category/presenter/category_screen.dart';
 
 List<GetPage<dynamic>>? pages = [
+  GetPage(
+    name: AppRoutes.base,
+    page: () => const BaseScreen(),
+  ),
   GetPage(
     name: AppRoutes.boarding,
     page: () => const BoardingScreen(),
@@ -27,5 +33,9 @@ List<GetPage<dynamic>>? pages = [
   GetPage(
     name: AppRoutes.profile,
     page: () => const ProfileScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.category,
+    page: () => const CategoryScreen(),
   ),
 ];

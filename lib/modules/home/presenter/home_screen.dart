@@ -10,7 +10,7 @@ import 'package:send_post_app/modules/home/presenter/widgets/post/post.dart';
 import 'package:send_post_app/modules/home/presenter/widgets/tab_bar_widget.dart';
 
 import '../../../entities/user.dart';
-import '../../base/presenter/base_screen.dart';
+import '../../base_page/presenter/base_page.dart';
 
 class HomeScreen extends GetWidget<UserController> {
   const HomeScreen({Key? key}) : super(key: key);
@@ -22,9 +22,8 @@ class HomeScreen extends GetWidget<UserController> {
       animationDuration: 100.milliseconds,
       initialIndex: 0,
       length: 3,
-      child: BaseScreen(
+      child: BasePage(
           hasFocusHandler: true,
-          hasBottomNavigationBar: true,
           child: GetBuilder<UserController>(
             id: 'userController',
             builder: (c) {
@@ -32,7 +31,6 @@ class HomeScreen extends GetWidget<UserController> {
                 children: [
                   Column(
                     children: [
-                      context.yMedium,
                       HomeHeader(controller: controller),
                       context.ySmall,
                       TabBarWidget(

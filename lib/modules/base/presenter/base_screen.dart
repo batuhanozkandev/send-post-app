@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:send_post_app/modules/category/presenter/category_screen.dart';
+import 'package:send_post_app/modules/home/presenter/home_screen.dart';
 
+import '../../../core/constants/app_icons.dart';
 import '../infra/datasources/base_screen_controller.dart';
-import '../infra/models/bottom_navigation_bar_item.dart';
 
 class BaseScreen extends GetWidget<BaseScreenController> {
-  final Widget child;
   final Widget? background;
   final EdgeInsetsGeometry? padding;
-  final bool? hasBottomNavigationBar;
   final bool? resizeToAvoidBottomInset;
   final bool? hasFocusHandler;
 
-   const BaseScreen({
+  const BaseScreen({
     Key? key,
-    required this.child,
     this.padding,
     this.background,
-    this.hasBottomNavigationBar,
     this.resizeToAvoidBottomInset = false,
     this.hasFocusHandler = false,
   }) : super(key: key);
@@ -26,40 +25,53 @@ class BaseScreen extends GetWidget<BaseScreenController> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: resizeToAvoidBottomInset,
-      bottomNavigationBar: (hasBottomNavigationBar ?? false)
-          ? BottomNavigationBar(
-              items: navBarItemList,
-              onTap: (index) => controller.changeScreen(
-                index,
-                controller.pages[index]!,
-              ),
-            )
-          : null,
+      bottomNavigationBar: GetBuilder<BaseScreenController>(
+          id: 'baseScreen',
+          builder: (c) {
+            return BottomNavigationBar(
+              items: [
+                BottomNavigationBarItem(
+                  label: '',
+                  icon: SvgPicture.asset(c.activePageIndex == 0
+                      ? AppIcons.homeFilled
+                      : AppIcons.home),
+                ),
+                BottomNavigationBarItem(
+                  label: '',
+                  icon: SvgPicture.asset(AppIcons.category),
+                ),
+                BottomNavigationBarItem(
+                  label: '',
+                  icon: SvgPicture.asset(AppIcons.addCircle),
+                ),
+                BottomNavigationBarItem(
+                  label: '',
+                  icon: SvgPicture.asset(AppIcons.notification),
+                ),
+                BottomNavigationBarItem(
+                  label: '',
+                  icon: SvgPicture.asset(AppIcons.profile),
+                ),
+              ],
+              onTap: (index) => controller.changeScreen(index),
+            );
+          }),
       body: GestureDetector(
-        onTap: () {
-          if (hasFocusHandler!) {
-            FocusManager.instance.primaryFocus?.unfocus();
-          }
-        },
-        child: SizedBox(
-          height: context.height,
-          width: context.width,
-          child: Stack(
-            children: [
-              if (background != null)
-                SizedBox(
-                    height: context.height,
-                    width: context.width,
-                    child: background!),
-              // screen
-              Padding(
-                padding: padding ?? EdgeInsets.zero,
-                child: child,
-              ),
+          onTap: () {
+            if (hasFocusHandler!) {
+              FocusManager.instance.primaryFocus?.unfocus();
+            }
+          },
+          child: PageView(
+            controller: controller.baseScreenPageController,
+            children: const [
+              HomeScreen(),
+              CategoryScreen(),
+              HomeScreen(),
+              CategoryScreen(),
+              CategoryScreen(),
             ],
-          ),
-        ),
-      ),
+          )),
     );
   }
 }
