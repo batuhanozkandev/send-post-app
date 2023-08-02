@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:send_post_app/core/constants/app_images.dart';
 import 'package:send_post_app/core/extensions/space.dart';
+import 'package:send_post_app/core/extensions/theme.dart';
 import 'package:send_post_app/entities/post.dart';
 import 'package:send_post_app/modules/home/infra/datasources/user_controller.dart';
 import 'package:send_post_app/modules/home/presenter/widgets/home_header.dart';
@@ -24,6 +25,9 @@ class HomeScreen extends GetWidget<UserController> {
       length: 3,
       child: BasePage(
           hasFocusHandler: true,
+          padding: EdgeInsets.symmetric(
+            horizontal: context.paddingHuge,
+          ),
           child: GetBuilder<UserController>(
             id: 'userController',
             builder: (c) {

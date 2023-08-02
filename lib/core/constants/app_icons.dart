@@ -23,6 +23,8 @@ class AppIcons {
   static const String instagram = '$mainPath/ic_instagram.svg';
   static const String logOut = '$mainPath/ic_log_out.svg';
   static const String notification = '$mainPath/ic_notification.svg';
+  static const String notificationFilled =
+      '$mainPath/ic_notification_filled.svg';
   static const String profile = '$mainPath/ic_profile.svg';
   static const String profileFilled = '$mainPath/ic_profile_filled.svg';
   static const String search = '$mainPath/ic_search.svg';

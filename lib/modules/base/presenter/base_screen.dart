@@ -32,25 +32,39 @@ class BaseScreen extends GetWidget<BaseScreenController> {
               items: [
                 BottomNavigationBarItem(
                   label: '',
-                  icon: SvgPicture.asset(c.activePageIndex == 0
-                      ? AppIcons.homeFilled
-                      : AppIcons.home),
+                  icon: SvgPicture.asset(
+                    c.activePageIndex == 0
+                        ? AppIcons.homeFilled
+                        : AppIcons.home,
+                  ),
                 ),
                 BottomNavigationBarItem(
                   label: '',
-                  icon: SvgPicture.asset(AppIcons.category),
+                  icon: SvgPicture.asset(
+                    c.activePageIndex == 1
+                        ? AppIcons.categoryFilled
+                        : AppIcons.category,
+                  ),
                 ),
                 BottomNavigationBarItem(
                   label: '',
-                  icon: SvgPicture.asset(AppIcons.addCircle),
+                  icon: SvgPicture.asset(
+                    AppIcons.addCircle,
+                  ),
                 ),
                 BottomNavigationBarItem(
                   label: '',
-                  icon: SvgPicture.asset(AppIcons.notification),
+                  icon: SvgPicture.asset(
+                    c.activePageIndex == 3
+                        ? AppIcons.notificationFilled
+                        : AppIcons.notification,
+                  ),
                 ),
                 BottomNavigationBarItem(
                   label: '',
-                  icon: SvgPicture.asset(AppIcons.profile),
+                  icon: SvgPicture.asset(
+                    AppIcons.profile,
+                  ),
                 ),
               ],
               onTap: (index) => controller.changeScreen(index),

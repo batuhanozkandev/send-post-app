@@ -23,7 +23,7 @@ class TabCategory extends GetWidget<UserController> {
         child: Obx(
       () => Container(
         height: context.heightOfScreen(5),
-        width: double.infinity,
+        width: context.widthOfScreen(30),
         decoration: BoxDecoration(
           color: controller.selectedTabIndex == index
               ? context.primaryColorLight.withOpacity(0.1)

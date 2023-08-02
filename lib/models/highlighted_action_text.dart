@@ -4,11 +4,13 @@ import 'package:send_post_app/core/extensions/theme.dart';
 class HighlightedActionText extends StatelessWidget {
   final String text;
   final void Function()? onTap;
+  final double? fontSize;
 
   const HighlightedActionText({
     super.key,
     required this.text,
     this.onTap,
+    this.fontSize = 16.0,
   });
 
   @override
@@ -21,6 +23,7 @@ class HighlightedActionText extends StatelessWidget {
           color: context.primaryColorDark,
           fontWeight: FontWeight.bold,
           letterSpacing: 2,
+          fontSize: fontSize,
         ),
       ),
     );

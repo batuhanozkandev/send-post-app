@@ -19,20 +19,24 @@ extension SpaceExtendion on BuildContext {
       );
 
   SizedBox get xHuge => SizedBox(
-    width: MediaQuery.of(this).size.width * 0.16,
-  );
+        width: MediaQuery.of(this).size.width * 0.16,
+      );
 
   // Space | Height
+  SizedBox get yySmall => SizedBox(
+        height: MediaQuery.of(this).size.height * 0.02,
+      );
+
   SizedBox get ySmall => SizedBox(
-    height: MediaQuery.of(this).size.height * 0.04,
-  );
+        height: MediaQuery.of(this).size.height * 0.04,
+      );
 
   SizedBox get yMedium => SizedBox(
-    height: MediaQuery.of(this).size.height * 0.08,
-  );
+        height: MediaQuery.of(this).size.height * 0.08,
+      );
 
   SizedBox get yLarge => SizedBox(
-    height: MediaQuery.of(this).size.height * 0.12,
+        height: MediaQuery.of(this).size.height * 0.12,
   );
 
   SizedBox get yHuge => SizedBox(

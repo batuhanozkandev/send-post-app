@@ -24,38 +24,33 @@ class PostCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: context.paddingHuge,
-      ),
-      child: Container(
-        height: context.heightOfScreen(42),
-        decoration: _postCardDecoration(context),
-        child: Column(
-          children: [
-            Padding(
-              padding: _postHeaderPadding(context),
-              child: PostHeader(
-                post: post,
-              ),
+    return Container(
+      height: context.heightOfScreen(42),
+      decoration: _postCardDecoration(context),
+      child: Column(
+        children: [
+          Padding(
+            padding: _postHeaderPadding(context),
+            child: PostHeader(
+              post: post,
             ),
+          ),
 
-            /// image
-            PostImage(
-              postImagePath: post.images?[0] ?? AppImages.dummyPostImage,
+          /// image
+          PostImage(
+            postImagePath: post.images?[0] ?? AppImages.dummyPostImage,
+          ),
+          Padding(
+            padding: _postHeaderPadding(context),
+            child: PostBottom(
+              commentCount: 12,
+              likeCount: 40,
+              onTapAddBookMarkIcon: onTapAddBookMarkIcon,
+              onTapCommentIcon: onTapComment,
+              onTapLikeCount: onTapLike,
             ),
-            Padding(
-              padding: _postHeaderPadding(context),
-              child: PostBottom(
-                commentCount: 12,
-                likeCount: 40,
-                onTapAddBookMarkIcon: onTapAddBookMarkIcon,
-                onTapCommentIcon: onTapComment,
-                onTapLikeCount: onTapLike,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
