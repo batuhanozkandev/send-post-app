@@ -23,6 +23,10 @@ extension SpaceExtendion on BuildContext {
       );
 
   // Space | Height
+  SizedBox get yyySmall => SizedBox(
+        height: MediaQuery.of(this).size.height * 0.01,
+      );
+
   SizedBox get yySmall => SizedBox(
         height: MediaQuery.of(this).size.height * 0.02,
       );

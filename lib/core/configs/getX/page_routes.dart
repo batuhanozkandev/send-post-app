@@ -3,6 +3,7 @@ import 'package:send_post_app/core/constants/app_routes.dart';
 import 'package:send_post_app/modules/auth/sign_up/presenter/sign_up_screen.dart';
 import 'package:send_post_app/modules/boarding/presenter/boarding_screen.dart';
 import 'package:send_post_app/modules/home/presenter/home_screen.dart';
+import 'package:send_post_app/modules/notification/presenter/notifications_screen.dart';
 import 'package:send_post_app/modules/profile/profile_screen.dart';
 
 import '../../../modules/auth/log_in/presenters/log_in_screen.dart';
@@ -37,5 +38,9 @@ List<GetPage<dynamic>>? pages = [
   GetPage(
     name: AppRoutes.category,
     page: () => const CategoryScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.notification,
+    page: () => const NotificationScreen(),
   ),
 ];

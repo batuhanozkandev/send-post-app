@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:send_post_app/modules/category/presenter/category_screen.dart';
 import 'package:send_post_app/modules/home/presenter/home_screen.dart';
+import 'package:send_post_app/modules/notification/presenter/notifications_screen.dart';
 
 import '../../../core/constants/app_icons.dart';
 import '../infra/datasources/base_screen_controller.dart';
@@ -82,7 +83,7 @@ class BaseScreen extends GetWidget<BaseScreenController> {
               HomeScreen(),
               CategoryScreen(),
               HomeScreen(),
-              CategoryScreen(),
+              NotificationScreen(),
               CategoryScreen(),
             ],
           )),

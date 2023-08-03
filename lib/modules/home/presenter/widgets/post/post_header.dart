@@ -4,8 +4,8 @@ import 'package:send_post_app/core/extensions/date.dart';
 import 'package:send_post_app/core/extensions/space.dart';
 import 'package:send_post_app/core/extensions/theme.dart';
 
-import '../../../../../core/constants/app_images.dart';
 import '../../../../../entities/post.dart';
+import '../../../../../models/avatar_model.dart';
 
 class PostHeader extends StatelessWidget {
   const PostHeader({
@@ -23,11 +23,7 @@ class PostHeader extends StatelessWidget {
         // Avatar of post
         Row(
           children: [
-            CircleAvatar(
-              foregroundImage: AssetImage(
-                post.owner?.avatarUrl ?? AppImages.dummyAvatar,
-              ),
-            ),
+            AvatarModel(url: post.owner?.avatarUrl),
             context.xSmall,
             Text(
               post.owner?.userName ?? 'Anonymous User',
