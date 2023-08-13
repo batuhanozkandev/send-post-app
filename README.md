@@ -50,9 +50,4 @@ If you have any feedback, please send me message 🙏🏻 https://www.linkedin.c
 
 ## Screenshots
 
-![Simulator Screenshot - iPhone 14 Pro Max - 2023-08-13 at 23 48 11](https://github.com/batuhanozkandev/send-post-app/assets/75941979/e127f06d-5e8e-483f-9322-494895a57fe6)
-![simulator_screenshot_1D8C5934-76AD-4B2C-AD0C-13F4FE214B9B](https://github.com/batuhanozkandev/send-post-app/assets/75941979/1802578c-d566-4693-a456-a64efab32555)
-![simulator_screenshot_49069E33-E1C0-46BC-BD27-71D4DB82390F](https://github.com/batuhanozkandev/send-post-app/assets/75941979/ea5e878b-419e-43c2-a029-3a1be64c761e)
-![simulator_screenshot_C086B022-D26A-4867-B25B-C28F77227A4A](https://github.com/batuhanozkandev/send-post-app/assets/75941979/ccd8f395-f62d-4cf3-a5ca-805d076be5d9)
-![simulator_screenshot_5720D4FD-24D2-4A9B-ACC9-B2F7F04F52BB](https://github.com/batuhanozkandev/send-post-app/assets/75941979/198b83fa-a722-4849-88ff-b04a5f9a4ece)
-![simulator_screenshot_007463FE-2EA5-46EB-99DE-E2AC43113D89](https://github.com/batuhanozkandev/send-post-app/assets/75941979/0d2e4ebc-b29e-474b-9d2e-0ac2b0e240c0)
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-08-13 at 23 48 11](https://github.com/batuhanozkandev/send-post-app/assets/75941979/7bab7598-daf9-478c-85bc-4141ded5ec9b)
