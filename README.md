@@ -1,7 +1,7 @@
 
 # Send Post App
 
-I wanted to try the my clean code performance. So, my first priority is writing clean code. But maybe I decide to develop this app later :)
+I wanted to try my clean code performance. So, my first priority is writing clean code. But maybe I decide to develop this app later :)
 
 ## Color Reference
 
@@ -24,7 +24,7 @@ I wanted to try the my clean code performance. So, my first priority is writing 
 
 #### Is this app responsive?
 
-Exactly! I created own responsive structure with extensions. I'm using width and height of screen in everywhere.
+Exactly! I created my own responsive structure with extensions. I'm using width and height of screen in everywhere.
 
 #### Why Firebase?
 
@@ -33,7 +33,7 @@ Because I have already experience on Rest Api. I also wanted to code and develop
 
 ## Development
 
-As I said, I want to write clean code! So, I am trying to implement and use what I learn my seniors and who I follow developers!
+As I said, I want to write clean code! So, I am trying to implement and use what I learn from my seniors and from who I follow developers!
 
 #### What did I pay attention?
 
@@ -50,3 +50,4 @@ If you have any feedback, please send me message 🙏🏻 https://www.linkedin.c
 
 ## Screenshots
 
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-08-13 at 23 48 11](https://github.com/batuhanozkandev/send-post-app/assets/75941979/e127f06d-5e8e-483f-9322-494895a57fe6)
