@@ -1,21 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+
+import '../../base_page/presenter/base_page.dart';
 
 class BoardingScreen extends StatelessWidget {
   const BoardingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
+    return BasePage(
+        background: Image.asset(
+          'assets/images/background.png',
+          fit: BoxFit.cover,
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Hi boarding screen'),
-            SvgPicture.asset('assets/icons/ic_camera.svg'),
+          children: const [
+            Center(
+              child: Text(
+                'Send Photo App',
+                style: TextStyle(color: Colors.white),
+              ),
+            )
           ],
-        ),
-      ),
-    );
+        ));
   }
 }

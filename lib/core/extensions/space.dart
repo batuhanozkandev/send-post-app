@@ -2,36 +2,48 @@ import 'package:flutter/cupertino.dart';
 
 extension SpaceExtendion on BuildContext {
   // Space | Width
-  SizedBox get spaceX4 => SizedBox(
-        width: MediaQuery.of(this).size.width * 4.0,
+  SizedBox get xxSmall => SizedBox(
+        width: MediaQuery.of(this).size.width * 0.02,
       );
 
-  SizedBox get spaceX8 => SizedBox(
-        width: MediaQuery.of(this).size.width * 8.0,
+  SizedBox get xSmall => SizedBox(
+        width: MediaQuery.of(this).size.width * 0.04,
       );
 
-  SizedBox get spaceX12 => SizedBox(
-        width: MediaQuery.of(this).size.width * 12.0,
+  SizedBox get xMedium => SizedBox(
+        width: MediaQuery.of(this).size.width * 0.08,
       );
 
-  SizedBox get spaceX16 => SizedBox(
-        width: MediaQuery.of(this).size.width * 12.0,
+  SizedBox get xLarge => SizedBox(
+        width: MediaQuery.of(this).size.width * 0.12,
+      );
+
+  SizedBox get xHuge => SizedBox(
+        width: MediaQuery.of(this).size.width * 0.16,
       );
 
   // Space | Height
-  SizedBox get spaceY4 => SizedBox(
-        width: MediaQuery.of(this).size.height * 4.0,
+  SizedBox get yyySmall => SizedBox(
+        height: MediaQuery.of(this).size.height * 0.01,
       );
 
-  SizedBox get spaceY8 => SizedBox(
-        width: MediaQuery.of(this).size.height * 8.0,
+  SizedBox get yySmall => SizedBox(
+        height: MediaQuery.of(this).size.height * 0.02,
       );
 
-  SizedBox get spaceY12 => SizedBox(
-        width: MediaQuery.of(this).size.height * 12.0,
+  SizedBox get ySmall => SizedBox(
+        height: MediaQuery.of(this).size.height * 0.04,
       );
 
-  SizedBox get spaceY16 => SizedBox(
-        width: MediaQuery.of(this).size.height * 12.0,
+  SizedBox get yMedium => SizedBox(
+        height: MediaQuery.of(this).size.height * 0.08,
       );
+
+  SizedBox get yLarge => SizedBox(
+        height: MediaQuery.of(this).size.height * 0.12,
+  );
+
+  SizedBox get yHuge => SizedBox(
+    height: MediaQuery.of(this).size.height * 0.16,
+  );
 }

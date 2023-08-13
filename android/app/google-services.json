@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "808447881417",
+    "project_id": "send-post-app",
+    "storage_bucket": "send-post-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:808447881417:android:03a79eb59c519533ea1d18",
+        "android_client_info": {
+          "package_name": "com.send_post_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "808447881417-1lg7kmvka41fj99ta43s6cr0msmtvsq1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.send_post_app",
+            "certificate_hash": "3b0955c08dd222db4182eabd33b5409ddf2d555f"
+          }
+        },
+        {
+          "client_id": "808447881417-ps0dtutsc7fmd3rq0206ee00r8rl0n0m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7nCDOyudvu40aIM9Y8CBVXeGzxTqvL-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "808447881417-ps0dtutsc7fmd3rq0206ee00r8rl0n0m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
