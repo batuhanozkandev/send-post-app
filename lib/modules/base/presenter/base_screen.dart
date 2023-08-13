@@ -64,7 +64,10 @@ class BaseScreen extends GetWidget<BaseScreenController> {
                 BottomNavigationBarItem(
                   label: '',
                   icon: SvgPicture.asset(
-                    AppIcons.profile,
+                    c.activePageIndex == 4
+                        ? AppIcons.profileFilled
+                        : AppIcons.profile,
+                    color: Colors.grey.withOpacity(0.3),
                   ),
                 ),
               ],
@@ -84,7 +87,7 @@ class BaseScreen extends GetWidget<BaseScreenController> {
               CategoryScreen(),
               HomeScreen(),
               NotificationScreen(),
-              CategoryScreen(),
+              //ProfileScreen(),
             ],
           )),
     );

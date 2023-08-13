@@ -26,10 +26,7 @@ class SignUpScreen extends GetWidget<AuthController> {
         ),
         child: Column(
           children: [
-            SizedBox(
-              height: context.heightOfScreen(40),
-              width: double.infinity,
-            ),
+            const Spacer(),
             Container(
               height: context.heightOfScreen(60),
               width: double.infinity,

@@ -21,6 +21,7 @@ class LogInScreen extends GetWidget<AuthController> {
   @override
   Widget build(BuildContext context) {
     return BasePage(
+        resizeToAvoidBottomInset: true,
         hasFocusHandler: true,
         background: Image.asset(
           AppImages.lightBackground,
@@ -28,10 +29,7 @@ class LogInScreen extends GetWidget<AuthController> {
         ),
         child: Column(
           children: [
-            SizedBox(
-              height: context.heightOfScreen(40),
-              width: double.infinity,
-            ),
+            const Spacer(),
             Container(
               height: context.heightOfScreen(60),
               width: double.infinity,
@@ -60,7 +58,7 @@ class LogInScreen extends GetWidget<AuthController> {
                     context.ySmall,
                     // password input
                     Obx(
-                      () => CustomInputFormField(
+                          () => CustomInputFormField(
                         key: const Key('password'),
                         controller: controller.passwordController,
                         hint: 'Password',
@@ -72,14 +70,14 @@ class LogInScreen extends GetWidget<AuthController> {
                             color: controller.obscureIsActive.value
                                 ? Colors.black
                                 : Colors.grey,
-                            fit: BoxFit.scaleDown,
+                                fit: BoxFit.scaleDown,
+                              ),
+                            ),
+                            validators: [
+                              FormBuilderValidators.required(),
+                              FormBuilderValidators.minLength(6),
+                            ],
                           ),
-                        ),
-                        validators: [
-                          FormBuilderValidators.required(),
-                          FormBuilderValidators.minLength(6),
-                        ],
-                      ),
                     ),
                     context.ySmall,
                     HighlightedActionText(
