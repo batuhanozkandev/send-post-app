@@ -1,16 +1,52 @@
-# send_post_app
 
-Send Post App
+# Send Post App
 
-## Getting Started
+I wanted to try the my clean code performance. So, my first priority is writing clean code. But maybe I decide to develop this app later :)
 
-This project is a starting point for a Flutter application.
+## Color Reference
 
-A few resources to get you started if this is your first Flutter project:
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Primary Light Color | #888BF4 |
+| Primary Dark Color | #5151C6 |
+| Secondary Color | #FFFFFF |
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Tech Stack
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**State Management:** GetX
+
+**Remote Database:** Firebase
+
+**Local Database:** Hive
+
+
+## FAQ
+
+#### Is this app responsive?
+
+Exactly! I created own responsive structure with extensions. I'm using width and height of screen in everywhere.
+
+#### Why Firebase?
+
+Because I have already experience on Rest Api. I also wanted to code and develop quickly alone.
+
+
+## Development
+
+As I said, I want to write clean code! So, I am trying to implement and use what I learn my seniors and who I follow developers!
+
+#### What did I pay attention?
+
+I paid attention to 'not repeat myself'. I try to use extract methods and classes. Also application file structure was important. It should be clear, understandable and can be improved.
+
+I used the singleton in many code files. Because we do not want to create some classes more and more, right? 🤭
+
+I used the extensions. For example, for getting height and width value of screen. (I've decided that I did not need to do this. Because GetX was already doing this. But it's okay, It was fun for me 💪🏻)
+
+Long story short, I know that, I need to improve myself about clean code. But I'm trying my best! I'm sure, it will be better day by day. Let's review my codes! 🙂
+## Feedback
+
+If you have any feedback, please send me message 🙏🏻 https://www.linkedin.com/in/batuhanozkan441/
+
+## Screenshots
+
